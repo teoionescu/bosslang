@@ -53,14 +53,14 @@ end.
 
 ### Language constructs
 
-- *if* statements
+- `if` statements
 ```pascal
 if r <> 0 then begin
     if x = 0 then x := 1
     else x := -1;
 end;
 ```
-- *while* loops
+- `while` loops
 ```pascal
 while x > 0 then begin
     CALL(print, x);
