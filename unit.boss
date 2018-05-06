@@ -1,0 +1,29 @@
+program UnitTest;
+    var x, y : integer;
+    var z : real;
+    var Z,t : integer;
+    var graf, r,    X : integer;
+begin
+    graf[0][x + y] := 1;
+    graf[x] := 2;
+    x := x[0][0] + y;
+    x := 444;
+    x := 3.14;
+    begin
+    y := 1;
+    x := (z+z) * x DIV ---y;
+    Z := z * Z <> 0;
+    end;
+    IF x > 0 THEN BEGIN
+    t := t * t * t;
+    while x > 0 THEN BEGIN
+        x := 1;
+        begin x := 2; end;
+        x := 0
+    END; END;
+    x := -3 * -CALL(max, 124.12, 1.111);
+    CALL(print, x);
+    IF x THEN IF y THEN ELSE ELSE IF y THEN ELSE;
+    IF x then if y then if Z then while X > 0 tHEN X := X-1;
+    begin IF x*X <> 10 THEN else X := y*z end;
+end.

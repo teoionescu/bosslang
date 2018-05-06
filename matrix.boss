@@ -1,0 +1,9 @@
+program matrix;
+var mat : integer;
+begin
+    mat[0][0] := 1;
+    mat[0][1] := 2;
+    mat[(1=1) + 0][(1=0) + 0] := 3;
+    mat[CALL(max, 0, 1)][CALL(pow, 1, 1)] := 4;
+    CALL(print, mat[1]); { prints mat[1][0] -> 3 }
+end.

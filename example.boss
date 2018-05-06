@@ -1,0 +1,20 @@
+program NONAME00;
+    var x, y : integer;
+    var r : real;
+begin
+    x := 6;
+    y := 5 * CALL(max, x, y);
+    while x > 0 then begin
+        CALL(print, x);
+        x := x - 1;
+    end;
+    if r <> 0 then
+    begin
+    	if x = 0 then x := 1
+    	else x := -1;
+    end;
+    CALL(moveup);
+    CALL(print, y);
+    y := CALL(squared, y);
+    CALL(print, y);
+end.
