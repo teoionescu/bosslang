@@ -687,16 +687,25 @@ class SemanticAnalyzer(NodeVisitor):
 
     def visit_Func_Checker(self, name, numargs):
         try:
-            exec("exec_return = hasattr(%s, '__call__')" % name)
+            exec("exec_return = hasattr(%s, '__call__')" % name, globals())
             if exec_return == True:
                 try:
-                    exec("import inspect; exec_return = inspect.getargspec(%s)" % name)
-                    if numargs != len(exec_return.args):
-                        return "Error: Function '{}' arguments expected {}, found {}".format(name, len(exec_return.args), numargs)
+                    import sys
+                    if sys.version_info[0] == 2:
+                        exec("import inspect; exec_return = inspect.getargspec(%s)" % name, globals())
+                        count = len(exec_return.args) - len(exec_return.defaults)
+                    elif sys.version_info[0] == 3:
+                        exec("import inspect; exec_return = inspect.signature(%s)" % name, globals())
+                        count = len([x for x in exec_return.parameters.values() if x.default == x.empty])
+                    if numargs != count:
+                        return "Error: Function '{}' arguments expected {}, found {}".format(name, count, numargs)
                     else:
                         return ""
                 except TypeError as e:
-                    # __builtin__ function
+                    # python2 fails __builtin__ function
+                    return ""
+                except ValueError as e:
+                    # python3 fails __builtin__ function
                     return ""
             else:
                 return "Error: '{}' is not a function".format(name)

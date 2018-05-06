@@ -56,8 +56,8 @@ def _runsource(source):
     try:
         exec(codeobj, globals())
     except Exception as e:
-        print "Runtime exception of type {} occurred:\n{}".format(type(e).__name__, \
-        '\n'.join(map(lambda c: '>\t' + c, str(e).split('\n'))))
+        print("Runtime exception of type {} occurred:\n{}".format(type(e).__name__, \
+        '\n'.join(map(lambda c: '>\t' + c, str(e).split('\n')))))
 
 def _main():
     import argparse
