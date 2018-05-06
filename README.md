@@ -10,6 +10,9 @@ $ python exe.py <source>
 $ python -c "from exe import runsource; runsource('program test; begin end.')"
 ```
 
+#### Description
+`exe.py` breaks down the *Bosslang* source into an *Abstract Syntax Tree (AST)*, reinterprets the output as a syntactically valid *Python* source and executes it.
+
 ## Syntax
 
 ### Program structure
