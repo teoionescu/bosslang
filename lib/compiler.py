@@ -701,7 +701,6 @@ class SemanticAnalyzer(NodeVisitor):
             else:
                 return "Error: '{}' is not a function".format(name)
         except NameError as e:
-            print("NASPA")
             return "Error: Function name '{}' is not defined".format(name)
         except SyntaxError as e:
             return ""
