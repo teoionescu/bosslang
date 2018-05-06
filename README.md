@@ -4,7 +4,7 @@ A basic Python source-to-source compiler and interpreter for a Pascal-like langu
 ## Usage
 
 ```bash
-$ python exe.py <source>
+$ python exe.py source.boss
 ```
 ```bash
 $ python -c "from exe import runsource; runsource('program test; begin end.')"
@@ -30,18 +30,19 @@ END.
 
 ### Supported types
 
+* `int()` and `float()` only
 ```pascal
 var x, y : integer;
 var r : real;
 ```
-* Scalars, arrays and matrices supproted!
+* Vectors and matrices also supported!
 ```pascal
 program matrix;
 var mat : integer;
 begin
     mat[0][0] := 1;
     mat[0][1] := 2;
-    mat[(1=1) + 0][(1=0) + 0] := 3;
+    mat[1=1][1=0] := 3;
     mat[CALL(max, 0, 1)][CALL(pow, 1, 1)] := 4;
     CALL(print, mat[1]); { prints mat[1][0] -> 3 }
 end.
@@ -76,6 +77,7 @@ end;
 | 3 | * / DIV | Multiplication, division, integer division |
 | 4 | + - | Binary plus/minus |
 | 5 | = <> < <= > >=  | Relational operators|
+| 6 | := | Assignment |
 
 *Todo: add logical expressions*
 

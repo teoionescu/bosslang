@@ -775,17 +775,17 @@ class Interpreter(NodeVisitor):
         elif node.op.type == FLOAT_DIV:
             return "(float({})) / (float({}))".format(self.visit(node.left), self.visit(node.right))
         elif node.op.type == COMP_EQ:
-            return "({}) == ({})".format(self.visit(node.left), self.visit(node.right))
+            return "int(({}) == ({}))".format(self.visit(node.left), self.visit(node.right))
         elif node.op.type == COMP_NEQ:
-            return "({}) != ({})".format(self.visit(node.left), self.visit(node.right))
+            return "int(({}) != ({}))".format(self.visit(node.left), self.visit(node.right))
         elif node.op.type == COMP_S:
-            return "({}) < ({})".format(self.visit(node.left), self.visit(node.right))
+            return "int(({}) < ({}))".format(self.visit(node.left), self.visit(node.right))
         elif node.op.type == COMP_L:
-            return "({}) > ({})".format(self.visit(node.left), self.visit(node.right))
+            return "int(({}) > ({}))".format(self.visit(node.left), self.visit(node.right))
         elif node.op.type == COMP_SEQ:
-            return "({}) <= ({})".format(self.visit(node.left), self.visit(node.right))
+            return "int(({}) <= ({}))".format(self.visit(node.left), self.visit(node.right))
         elif node.op.type == COMP_LEQ:
-            return "({}) >= ({})".format(self.visit(node.left), self.visit(node.right))
+            return "int(({}) >= ({}))".format(self.visit(node.left), self.visit(node.right))
 
     def visit_Num(self, node):
         return str(node.value)
