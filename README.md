@@ -6,6 +6,9 @@ A basic Python source-to-source compiler and interpreter for a Pascal-like langu
 ```bash
 $ python exe.py <source>
 ```
+```bash
+$ python -c "from exe import runsource; runsource('program test; begin end.')"
+```
 
 ## Syntax
 
