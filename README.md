@@ -71,6 +71,8 @@ end;
 | 4 | + - | Binary plus/minus |
 | 5 | = <> < <= > >=  | Relational operators|
 
+*Todo: add logical expressions
+
 ### Functions
 
 ```pascal
